@@ -20,9 +20,11 @@ export class News extends Component {
     };
   }
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=41dbf8d792cf4b5da5211b023ffd47c8&page=1&pageSize=20`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=84e9a9368d364bd39a7861d2030aecf8&page=1&pageSize=25`;
+
     let data = await fetch(url);
     let parseData = await data.json();
+    console.log(parseData);
     this.setState({
       articles: parseData.articles,
       totalResults: parseData.totalResults,
